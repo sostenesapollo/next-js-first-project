@@ -4,6 +4,7 @@ import { NextSeo } from 'next-seo';
 
 export default function Cars({car}) {
     var router = useRouter()    
+    if (!router.query.car) return <p>Loading...</p>;
     return (
         <>
             <NextSeo
