@@ -17,7 +17,7 @@ export default function Cars({data}) {
                 title={"Car: "+data.car}
                 description="Then with a short description here."
             />
-            {/* Carro nome:   {router.query.car} */}
+            Carro nome:   {data.car}
 
             <p>
                 <Link href="/">Home</Link>
