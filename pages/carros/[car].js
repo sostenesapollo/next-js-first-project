@@ -2,16 +2,22 @@ import Link from 'next/link'
 import {useRouter} from 'next/router'
 import { NextSeo } from 'next-seo';
 
-export default function Cars({car}) {
-    var router = useRouter()    
-    if (!router.query.car) return <p>Loading...</p>;
+
+export async function getServerSideProps({params}) {  
+    return { props: { data: params } }
+}
+
+
+export default function Cars({data}) {
+       
+    console.log(data)
     return (
         <>
             <NextSeo
-                title={"Car: "+router.query.car}
+                title={"Car: "+data.car}
                 description="Then with a short description here."
             />
-            Carro nome:   {router.query.car}
+            {/* Carro nome:   {router.query.car} */}
 
             <p>
                 <Link href="/">Home</Link>
